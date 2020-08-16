@@ -1,20 +1,31 @@
 <script>
-	 let name = "Ipung DEV"
-	 let imgURL = 'image/svelte.png'
 
-	 let skill = {
-		 namaSkill : ['ReactJS', 'SvelteJS', 'PHP'],
-		 rateSkill : 8
-	 }
+	import Other from './Other/Other.svelte'
 
+	let name = "Jack Ma"
+	let skill = {
+		namaSkill : ["Svelte", "PHP", "ReactJs", "VueJS"],
+		ratingSkill : 80
+	}
+
+	let imageURL = "image/logosvelte.png"
+	
 </script>
 
 <main>
-<h2>Hello {name}</h2>
-<img src="{imgURL}" alt="logo" width="300"/>
-<p> Skill Utama : {skill.namaSkill[0]} dan Rate {skill.rateSkill}</p>
+	<h2>Welcome, <span class="nama">{name}</span></h2>
+	<hr>
+	<p>Skill : <b>{skill.namaSkill[0]} dan {skill.namaSkill[3]} </b></p>
+	<p>Rating: {skill.ratingSkill}</p>
+	<img src="{imageURL}"alt="Logo Svelte" width="300"/>
+	<Other/>
 </main>
 
+
+
 <style>
-	
+	.nama {
+		color: red;
+		font-family: "Times New Roman", Times, serif;
+	}
 </style>
