@@ -1,31 +1,20 @@
 <script>
-	export let name, skill;
+	 let name = "Ipung DEV"
+	 let imgURL = 'image/svelte.png'
+
+	 let skill = {
+		 namaSkill : ['ReactJS', 'SvelteJS', 'PHP'],
+		 rateSkill : 8
+	 }
+
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<h3>Skill {skill}</h3>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+<h2>Hello {name}</h2>
+<img src="{imgURL}" alt="logo" width="300"/>
+<p> Skill Utama : {skill.namaSkill[0]} dan Rate {skill.rateSkill}</p>
 </main>
 
 <style>
-	main {
-		text-align: left;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+	
 </style>

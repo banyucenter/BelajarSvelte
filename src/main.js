@@ -2,10 +2,10 @@ import App from './App.svelte';
 
 const app = new App({
 	target: document.body,
-	props: {
-		name: 'IPUNG DEV',
-		skill: 'SvelteJS Master'
-	}
+	// props: {
+	// 	name: 'IPUNG DEV',
+	// 	skill: 'SvelteJS Master'
+	// }
 });
 
 export default app;
