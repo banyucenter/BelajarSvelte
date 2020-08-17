@@ -24,12 +24,12 @@
   //deklaratif
   $: hargatotal = keranjang * harga;
 
-  $: if (keranjang > 5) {
+  $: if (keranjang >= 5) {
     hargatotal = keranjang * harga - keranjang * harga * diskon.lebihdari5;
-  } else if (keranjang > 3) {
+  } else if (keranjang >= 3) {
     hargatotal = keranjang * harga - keranjang * harga * diskon.lebihdari3;
   } else {
-    hargatotal = keranjang * harga;
+    hargatotal 
   }
 
   function handleClick() {
@@ -75,7 +75,7 @@
     </Col>
     <Col xs="3">
       <Card body color="light" class="mb-3">Jumlah pesanan: {keranjang}</Card>
-      <Card body color="light" class="mb-3">
+      <Card body color="primary" class="mb-3" inverse>
         Harga Sebelum Diskon: {hargatotal}
       </Card>
       <Card body color="danger" inverse>
