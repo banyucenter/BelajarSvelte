@@ -1,12 +1,14 @@
 <script>
     import {nama} from './CSS/Style'
-    
 </script>
 
 <main>
 
-    <p>Ini adalah <span class={nama}>komponen lain</span></p>
+    <p>Ini adalah sebuah komponen <b><span class={nama}>SVELTE</span></b> lain</p>
 </main>
 
-
-
+<style>
+    .nama {
+        color: red
+    }
+</style>
