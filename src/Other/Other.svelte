@@ -3,7 +3,6 @@
 </script>
 
 <main>
-
     <p>Ini adalah sebuah komponen <b><span class={nama}>SVELTE</span></b> lain</p>
 </main>
 
