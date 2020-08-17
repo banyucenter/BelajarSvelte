@@ -16,10 +16,21 @@
 
   let keranjang = 0;
   let harga = 10000000;
-  let diskon = 0.1;
+  let diskon = {
+    lebihdari3: 0.1,
+    lebihdari5: 0.5,
+  };
+
   //deklaratif
-  $: sebelumdiskon = keranjang * harga;
-  $: setelahdiskon = keranjang * harga - keranjang * harga * diskon;
+  $: hargatotal = keranjang * harga;
+
+  $: if (keranjang > 5) {
+    hargatotal = keranjang * harga - keranjang * harga * diskon.lebihdari5;
+  } else if (keranjang > 3) {
+    hargatotal = keranjang * harga - keranjang * harga * diskon.lebihdari3;
+  } else {
+    hargatotal = keranjang * harga;
+  }
 
   function handleClick() {
     keranjang += 1;
@@ -65,10 +76,10 @@
     <Col xs="3">
       <Card body color="light" class="mb-3">Jumlah pesanan: {keranjang}</Card>
       <Card body color="light" class="mb-3">
-        Harga Sebelum Diskon: {sebelumdiskon}
+        Harga Sebelum Diskon: {hargatotal}
       </Card>
       <Card body color="danger" inverse>
-        Harga Setelah Diskon : {setelahdiskon}
+        Harga Setelah Diskon : {hargatotal}
       </Card>
 
     </Col>
