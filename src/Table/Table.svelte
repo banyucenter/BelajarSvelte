@@ -1,30 +1,34 @@
-<script>
-    import { Table } from 'sveltestrap';
+<script >
+    import { Table, Button } from 'sveltestrap';
 
+    //data dummy
     let user = [
         {
-            id: 'uuid1',
-            firstname: 'Jay',
+            id: 'uud1',
+            firstname: 'Joko',
             lastname: 'Harris',
-            username: 'jay16'
+            username: 'joe'
         },
         {
-            id: 'uuid2',
-            firstname: 'Rick',
+            id: 'uud2',
+            firstname: 'Rich',
             lastname: 'Harris',
-            username: 'jay16'
+            username: 'rich'
         },
         {
-            id: 'uuid3',
-            firstname: 'Chuck',
+            id: 'uud3',
+            firstname: 'Jane',
             lastname: 'Harris',
-            username: 'jay16'
+            username: 'jane'
         }
     ]
 
+    const hapusData = (id) => {
+        console.log(id)
+        user = user.filter((u)=>u.id !=id)
+    }
   </script>
   
-  <h2>Table User</h2>
   <Table>
     <thead>
       <tr>
@@ -32,19 +36,21 @@
         <th>First Name</th>
         <th>Last Name</th>
         <th>Username</th>
+        <th>Aksi</th>
       </tr>
     </thead>
     <tbody>
-        <!-- {#each user as u} -->
-        {#each user as u, i  }
+    {#each user as u,i (u.id)}
       <tr>
-        <th scope="row">{i+1} : {u.id}</th>
+        <th scope="row">{i + 1}</th>
         <td>{u.firstname}</td>
         <td>{u.lastname}</td>
         <td>{u.username}</td>
+        <td><Button on:click={()=>hapusData(u.id)}>Hapus</Button></td>
       </tr>
       {:else}
-      <p>Tidak ada data!</p>
-      {/each}
+      <br>
+      <p>Data tidak ditemukan!</p>
+    {/each} 
     </tbody>
   </Table>

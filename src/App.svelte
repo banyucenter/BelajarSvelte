@@ -2,8 +2,9 @@
   import { Col, Container, Row, Button, ListGroup } from "sveltestrap";
   import NavigationBar from "./NavigationBar/NavigationBar.svelte";
   import ListItem from "./ListItem/ListItem.svelte";
-import Welcome from "./Welcome/Welcome.svelte";
+  import Welcome from "./Welcome/Welcome.svelte";
 import Table from "./Table/Table.svelte";
+
 
   const newlaptop = {
     produk: "Asus Gaming",
@@ -23,6 +24,7 @@ import Table from "./Table/Table.svelte";
 <Container>
   <Welcome role={user.role} user={user.username}/>
   <Table/>
+  
   <Row>
     <Col>
       <ListGroup>
