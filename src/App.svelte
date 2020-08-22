@@ -1,11 +1,14 @@
 <script>
   import { Col, Container, Row, Button, ListGroup } from "sveltestrap";
   import NavigationBar from "./NavigationBar/NavigationBar.svelte";
-  import ListItem from "./ListItem/ListItem.svelte";
-  import Welcome from "./Welcome/Welcome.svelte";
-  import Table from "./Table/Table.svelte";
-  import TableProduk from "./TableProduk/TableProduk.svelte";
-  import Produk from "./Table/Produk.svelte";
+import TableProduk from "./TableProduk/TableProduk.svelte";
+import Produk from "./TableProduk/Produk.svelte";
+import AllProduk from "./TableProduk/AllProduk.svelte";
+//   import ListItem from "./ListItem/ListItem.svelte";
+//   import Welcome from "./Welcome/Welcome.svelte";
+// import Table from "./Table/Table.svelte";
+
+
   // const newlaptop = {
   //   produk: "Asus Gaming",
   //   desc: "Laptop Gaming Keren",
@@ -36,8 +39,9 @@
     },
   ];
 
-  //data baru
-  let databaru = [
+  //data yang akan kita tambahkan
+   //data baru
+   let databaru = [
     {
         id: "uuid4",
         produk: "HP Pavillion",
@@ -49,40 +53,32 @@
         harga: 35000000,
     }
   ]
-    
 
-  function AddtoCart(event) {
+  function AddtoCart(event){
     produk.push(event.detail.data)
     produk = produk
   }
+
 
 </script>
 
 <NavigationBar />
 <br />
 <Container>
-  <!-- <Welcome role={user.role} user={user.username}/> -->
-  <!-- <Table/> -->
   <Row>
     <Col>
-      <TableProduk produk={produk} />
+      <TableProduk produk={produk}/>
     </Col>
     <Col>
-      <h2>Data Produk</h2>
-      <hr />
       <Row>
-        <Col>
-          <Produk on:toCart={AddtoCart} produk={databaru[0]}/>
-        </Col>
-        <Col>
-          <Produk on:toCart={AddtoCart} produk={databaru[1]} />
-        </Col>
-        
+        <AllProduk on:toCart={AddtoCart} produk={databaru}/>
       </Row>
     </Col>
   </Row>
-
-  <!-- <Row>
+  <!-- <Welcome role={user.role} user={user.username}/>
+  <Table/>
+  
+  <Row>
     <Col>
       <ListGroup>
         <ListItem produk={'Macbook Pro 2020'} desc={'Ini adalah laptop'} />

@@ -2,7 +2,6 @@
     import { Table, Button } from 'sveltestrap';
     //props
     export let produk
-
   </script>
 
   <h2>List Produk</h2>
