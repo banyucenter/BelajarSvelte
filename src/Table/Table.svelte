@@ -24,8 +24,9 @@
     ]
 
     const hapusData = (id) => {
-        console.log(id)
-        user = user.filter((u)=>u.id !=id)
+      // console.log(id)
+      // console.log(e)
+      user = user.filter((u)=>u.id != id)
     }
   </script>
   
