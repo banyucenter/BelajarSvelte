@@ -1,9 +1,9 @@
 <script>
-  import { Col, Container, Row, Button, ListGroup } from "sveltestrap";
+  import { Col, Container, Row, Button, ListGroup,Form, FormGroup, FormText, Input, Label  } from "sveltestrap";
   import NavigationBar from "./NavigationBar/NavigationBar.svelte";
-import TableProduk from "./TableProduk/TableProduk.svelte";
-import Produk from "./TableProduk/Produk.svelte";
-import AllProduk from "./TableProduk/AllProduk.svelte";
+// import TableProduk from "./TableProduk/TableProduk.svelte";
+// import Produk from "./TableProduk/Produk.svelte";
+// import AllProduk from "./TableProduk/AllProduk.svelte";
 //   import ListItem from "./ListItem/ListItem.svelte";
 //   import Welcome from "./Welcome/Welcome.svelte";
 // import Table from "./Table/Table.svelte";
@@ -59,6 +59,16 @@ import AllProduk from "./TableProduk/AllProduk.svelte";
     produk = produk
   }
 
+  let hargadefault = 100000
+
+  const setHargaDefault = () => {
+    hargaDefault = 100000
+  }
+
+  const inputHarga = (e) => {
+    hargadefault = e.target.value
+  }
+
 
 </script>
 
@@ -67,11 +77,24 @@ import AllProduk from "./TableProduk/AllProduk.svelte";
 <Container>
   <Row>
     <Col>
-      <TableProduk produk={produk}/>
+      <Form>
+        <FormGroup>
+          <Label>Harga</Label>
+          <!-- <Input type="number" on:input={inputHarga} value={hargadefault}/> -->
+          <Input type="number" bind:value={hargadefault}/>
+          <br>
+          <Button on:click={setHargaDefault}>Set Default</Button>
+        </FormGroup>
+      </Form>
+      <!-- <TableProduk produk={produk}/> -->
     </Col>
     <Col>
       <Row>
-        <AllProduk on:toCart={AddtoCart} produk={databaru}/>
+        <div>
+          <p>Harga Produk:</p>
+          <h4>Rp. {hargadefault}</h4>
+        </div>
+        <!-- <AllProduk on:toCart={AddtoCart} produk={databaru}/> -->
       </Row>
     </Col>
   </Row>
