@@ -40,6 +40,7 @@ export default {
 	plugins: [
 		svelte({
 			// enable run-time checks when not in production
+			hydratable: true,
 			dev: !production,
 			// we'll extract any component CSS out into
 			// a separate file - better for performance

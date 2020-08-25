@@ -18,6 +18,8 @@
     function handleUpdate(event) {
       isOpen = event.detail.isOpen;
     }
+
+
   </script>
   
   <Navbar color="primary" dark expand="md">
@@ -25,6 +27,9 @@
     <NavbarToggler on:click={() => (isOpen = !isOpen)} />
     <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
       <Nav class="ml-auto" navbar>
+        <NavItem>
+          <NavLink href="about">About</NavLink>
+        </NavItem>
         <NavItem>
           <NavLink href="#components/">Components</NavLink>
         </NavItem>
