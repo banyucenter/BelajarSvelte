@@ -18,8 +18,6 @@
     function handleUpdate(event) {
       isOpen = event.detail.isOpen;
     }
-
-
   </script>
   
   <Navbar color="primary" dark expand="md">
@@ -28,18 +26,15 @@
     <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
       <Nav class="ml-auto" navbar>
         <NavItem>
-          <NavLink href="about">About</NavLink>
+          <NavLink href="about">About Us</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#components/">Components</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="https://github.com/bestguy/sveltestrap">GitHub</NavLink>
+          <NavLink href="https://github.com/bestguy/sveltestrap">Joss</NavLink>
         </NavItem>
         <UncontrolledDropdown nav inNavbar>
-          <DropdownToggle nav caret>Options</DropdownToggle>
+          <DropdownToggle nav caret>Binding</DropdownToggle>
           <DropdownMenu right>
-            <DropdownItem>Option 1</DropdownItem>
+            <DropdownItem href="checkbox">CheckBox</DropdownItem>
             <DropdownItem>Option 2</DropdownItem>
             <DropdownItem divider />
             <DropdownItem>Reset</DropdownItem>

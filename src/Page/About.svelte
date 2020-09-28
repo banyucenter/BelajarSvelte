@@ -1,1 +1,2 @@
-<h2>About</h2>
+
+<h2>About Svelte 3</h2>

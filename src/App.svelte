@@ -14,6 +14,7 @@
   import NavigationBar from "./NavigationBar/NavigationBar.svelte";
   import About from "./Page/About.svelte";
   import Home from "./Page/Home.svelte";
+  import CheckBox from "./Page/CheckBox.svelte"
 
   export let url = "";
 </script>
@@ -22,8 +23,8 @@
   <NavigationBar />
   <br />
   <Container>
-
     <Route path="about" component={About} />
+    <Route path="checkbox" component={CheckBox} />
     <Route path="/">
       <Home />
     </Route>
